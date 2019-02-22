@@ -185,24 +185,24 @@ package body Tutorials.Textured_Cube is
    begin
       State.Position_Buffer := State.Context.Create_Buffer;
       State.Context.Bind_Buffer
-        (GL_ARRAY_BUFFER, State.Position_Buffer);
+        (GL_Array_Buffer, State.Position_Buffer);
 
       State.Context.Buffer_Data
-        (Target => GL_ARRAY_BUFFER,
+        (Target => GL_Array_Buffer,
          Data   => Positions,
-         Usage  => GL_STATIC_DRAW);
+         Usage  => GL_Static_Draw);
 
       State.Texcoord_Buffer := State.Context.Create_Buffer;
-      State.Context.Bind_Buffer (GL_ARRAY_BUFFER, State.Texcoord_Buffer);
+      State.Context.Bind_Buffer (GL_Array_Buffer, State.Texcoord_Buffer);
 
       State.Context.Buffer_Data
-        (GL_ARRAY_BUFFER, Texture_Coordinates, GL_STATIC_DRAW);
+        (GL_Array_Buffer, Texture_Coordinates, GL_Static_Draw);
 
       State.Index_Buffer := State.Context.Create_Buffer;
       State.Context.Bind_Buffer
-        (GL_ELEMENT_ARRAY_BUFFER, State.Index_Buffer);
+        (GL_Element_Array_Buffer, State.Index_Buffer);
       State.Context.Buffer_Data
-        (GL_ELEMENT_ARRAY_BUFFER, Indices, GL_STATIC_DRAW);
+        (GL_Element_Array_Buffer, Indices, GL_Static_Draw);
 
    end Initialize_Buffers;
 
@@ -217,17 +217,17 @@ package body Tutorials.Textured_Cube is
       return GLuint
    is
       Vertex_Shader : constant GLuint :=
-                        Load_Shader (Context, GL_VERTEX_SHADER,
+                        Load_Shader (Context, GL_Vertex_Shader,
                                      Vertex_Shader_Source);
       Fragment_Shader : constant GLuint :=
-                          Load_Shader (Context, GL_FRAGMENT_SHADER,
+                          Load_Shader (Context, GL_Fragment_Shader,
                                        Fragment_Shader_Source);
       Program         : constant GLuint := Context.Create_Program;
    begin
       Context.Attach_Shader (Program, Vertex_Shader);
       Context.Attach_Shader (Program, Fragment_Shader);
       Context.Link_Program (Program);
-      if not Context.Get_Program_Parameter (Program, GL_LINK_STATUS) then
+      if not Context.Get_Program_Parameter (Program, GL_Link_Status) then
          raise Program_Error with "link error";
       end if;
       return Program;
@@ -247,7 +247,7 @@ package body Tutorials.Textured_Cube is
    begin
       Context.Shader_Source (Shader, Source);
       Context.Compile_Shader (Shader);
-      if not Context.Get_Shader_Parameter (Shader, GL_COMPILE_STATUS) then
+      if not Context.Get_Shader_Parameter (Shader, GL_Compile_Status) then
          raise Program_Error with "an error occurred compilng the shader";
       end if;
       return Shader;
@@ -266,20 +266,20 @@ package body Tutorials.Textured_Cube is
       pragma Unreferenced (View);
       Texture : constant GLuint := Context.Create_Texture;
    begin
-      Context.Bind_Texture (GL_TEXTURE_2D, Texture);
+      Context.Bind_Texture (GL_Texture_2d, Texture);
       Context.Tex_Image_2D
-        (Target         => GL_TEXTURE_2D,
+        (Target         => GL_Texture_2d,
          Level          => 0,
-         Internalformat => GL_RGBA,
-         Format         => GL_RGBA,
-         Item_Type      => GL_UNSIGNED_BYTE,
+         Internalformat => GL_Rgba,
+         Format         => GL_Rgba,
+         Item_Type      => GL_Unsigned_Byte,
          Image_Id       => Image_Id);
       Context.Tex_Parameteri
-        (GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, 33071);
+        (GL_Texture_2d, GL_Texture_Wrap_S, 33071);
       Context.Tex_Parameteri
-        (GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, 33071);
+        (GL_Texture_2d, GL_Texture_Wrap_T, 33071);
       Context.Tex_Parameteri
-        (GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, 9729);
+        (GL_Texture_2d, GL_Texture_Min_Filter, 9729);
 
 --        Tex_Image_2D
 --          (Context.all,
@@ -327,20 +327,20 @@ package body Tutorials.Textured_Cube is
       Context.Rotate (Model_View_Matrix, State.Rotation, 0.0, 0.0, 1.0);
       Context.Rotate (Model_View_Matrix, State.Rotation * 0.7, 0.0, 1.0, 0.0);
 
-      Context.Clear ((GL_COLOR_BUFFER_BIT, GL_DEPTH_BUFFER_BIT));
+      Context.Clear ((GL_Color_Buffer_Bit, GL_Depth_Buffer_Bit));
 
-      Context.Bind_Buffer (GL_ARRAY_BUFFER, State.Position_Buffer);
-      Context.Bind_Buffer (GL_ELEMENT_ARRAY_BUFFER, State.Index_Buffer);
+      Context.Bind_Buffer (GL_Array_Buffer, State.Position_Buffer);
+      Context.Bind_Buffer (GL_Element_Array_Buffer, State.Index_Buffer);
 
       Context.Vertex_Attrib_Pointer
         (State.Vertex_Position, 3,
-         GL_FLOAT, False, 0, 0);
+         GL_Float, False, 0, 0);
       Context.Enable_Vertex_Attrib_Array (State.Vertex_Position);
 
-      Context.Bind_Buffer (GL_ARRAY_BUFFER, State.Texcoord_Buffer);
+      Context.Bind_Buffer (GL_Array_Buffer, State.Texcoord_Buffer);
       Context.Vertex_Attrib_Pointer
         (State.Vertex_Texcoord, 2,
-         GL_FLOAT, False, 0, 0);
+         GL_Float, False, 0, 0);
       Context.Enable_Vertex_Attrib_Array (State.Vertex_Texcoord);
 
       Context.Use_Program (State.Program);
@@ -349,13 +349,13 @@ package body Tutorials.Textured_Cube is
       Context.Uniform_Matrix
         (State.Model_View_Matrix, Model_View_Matrix);
 
-      Context.Active_Texture (GL_TEXTURE0);
-      Context.Bind_Texture (GL_TEXTURE_2D, State.Texture);
+      Context.Active_Texture (GL_Texture0);
+      Context.Bind_Texture (GL_Texture_2d, State.Texture);
 
       Context.Draw_Elements
-        (Mode         => GL_TRIANGLES,
+        (Mode         => GL_Triangles,
          Count        => 36,
-         ElementType  => GL_UNSIGNED_SHORT,
+         ElementType  => GL_Unsigned_Short,
          Offset       => 0);
 
       Context.End_Render;
@@ -428,8 +428,8 @@ package body Tutorials.Textured_Cube is
 
       Context.Clear_Color (0.0, 0.0, 0.0, 1.0);
       Context.Clear_Depth (1.0);
-      Context.Enable (GL_DEPTH_TEST);
-      Context.Depth_Func (GL_LEQUAL);
+      Context.Enable (GL_Depth_Test);
+      Context.Depth_Func (GL_Lequal);
 
       Tutorial.State.Aspect_Ratio :=
         GLfloat (Tutorial.Canvas.Width)

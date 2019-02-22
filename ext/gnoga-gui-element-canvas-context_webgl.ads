@@ -45,624 +45,624 @@ package Gnoga.Gui.Element.Canvas.Context_WebGL is
 
 
    type Attrib_Mask is
-     (GL_DEPTH_BUFFER_BIT,
-      GL_STENCIL_BUFFER_BIT,
-      GL_COLOR_BUFFER_BIT);
+     (GL_Depth_Buffer_Bit,
+      GL_Stencil_Buffer_Bit,
+      GL_Color_Buffer_Bit);
    type Attrib_Mask_Array is array (Positive range <>) of Attrib_Mask;
 
    type Alpha_Function is
-     (GL_NEVER,
-      GL_LESS,
-      GL_EQUAL,
-      GL_LEQUAL,
-      GL_GREATER,
-      GL_NOTEQUAL,
-      GL_GEQUAL,
-      GL_ALWAYS);
+     (GL_Never,
+      GL_Less,
+      GL_Equal,
+      GL_Lequal,
+      GL_Greater,
+      GL_Notequal,
+      GL_Gequal,
+      GL_Always);
 
    type Blend_Equation_Mode_EXT is
-     (GL_FUNC_ADD,
-      GL_FUNC_SUBTRACT,
-      GL_FUNC_REVERSE_SUBTRACT);
+     (GL_Func_Add,
+      GL_Func_Subtract,
+      GL_Func_Reverse_Subtract);
 
    type Buffer_Target_ARB is
-     (GL_ARRAY_BUFFER,
-      GL_ELEMENT_ARRAY_BUFFER);
+     (GL_Array_Buffer,
+      GL_Element_Array_Buffer);
 
    type Buffer_Usage_ARB is
-     (GL_STREAM_DRAW,
-      GL_STATIC_DRAW,
-      GL_DYNAMIC_DRAW);
+     (GL_Stream_Draw,
+      GL_Static_Draw,
+      GL_Dynamic_Draw);
 
    type Clear_Buffer_Mask is
-     (GL_DEPTH_BUFFER_BIT,
-      GL_STENCIL_BUFFER_BIT,
-      GL_COLOR_BUFFER_BIT);
+     (GL_Depth_Buffer_Bit,
+      GL_Stencil_Buffer_Bit,
+      GL_Color_Buffer_Bit);
    type Clear_Buffer_Mask_Array is array (Positive range <>) of Clear_Buffer_Mask;
 
    type Color_Material_Face is
-     (GL_FRONT,
-      GL_BACK,
-      GL_FRONT_AND_BACK);
+     (GL_Front,
+      GL_Back,
+      GL_Front_And_Back);
 
    type Color_Pointer_Type is
-     (GL_BYTE,
-      GL_UNSIGNED_BYTE,
-      GL_SHORT,
-      GL_UNSIGNED_SHORT,
-      GL_INT,
-      GL_UNSIGNED_INT,
-      GL_FLOAT);
+     (GL_Byte,
+      GL_Unsigned_Byte,
+      GL_Short,
+      GL_Unsigned_Short,
+      GL_Int,
+      GL_Unsigned_Int,
+      GL_Float);
 
    type Cull_Face_Mode is
-     (GL_FRONT,
-      GL_BACK,
-      GL_FRONT_AND_BACK);
+     (GL_Front,
+      GL_Back,
+      GL_Front_And_Back);
 
    type Depth_Function is
-     (GL_NEVER,
-      GL_LESS,
-      GL_EQUAL,
-      GL_LEQUAL,
-      GL_GREATER,
-      GL_NOTEQUAL,
-      GL_GEQUAL,
-      GL_ALWAYS);
+     (GL_Never,
+      GL_Less,
+      GL_Equal,
+      GL_Lequal,
+      GL_Greater,
+      GL_Notequal,
+      GL_Gequal,
+      GL_Always);
 
    type Draw_Buffer_Mode is
-     (GL_NONE,
-      GL_FRONT,
-      GL_BACK,
-      GL_FRONT_AND_BACK);
+     (GL_None,
+      GL_Front,
+      GL_Back,
+      GL_Front_And_Back);
 
    type Draw_Elements_Type is
-     (GL_UNSIGNED_BYTE,
-      GL_UNSIGNED_SHORT,
-      GL_UNSIGNED_INT);
+     (GL_Unsigned_Byte,
+      GL_Unsigned_Short,
+      GL_Unsigned_Int);
 
    type Enable_Cap is
-     (GL_CULL_FACE,
-      GL_DEPTH_TEST,
-      GL_STENCIL_TEST,
-      GL_DITHER,
-      GL_BLEND,
-      GL_SCISSOR_TEST,
-      GL_TEXTURE_2D,
-      GL_POLYGON_OFFSET_FILL,
-      GL_SAMPLE_ALPHA_TO_COVERAGE,
-      GL_SAMPLE_COVERAGE);
+     (GL_Cull_Face,
+      GL_Depth_Test,
+      GL_Stencil_Test,
+      GL_Dither,
+      GL_Blend,
+      GL_Scissor_Test,
+      GL_Texture_2d,
+      GL_Polygon_Offset_Fill,
+      GL_Sample_Alpha_To_Coverage,
+      GL_Sample_Coverage);
 
    type Error_Code is
-     (GL_NO_ERROR,
-      GL_INVALID_ENUM,
-      GL_INVALID_VALUE,
-      GL_INVALID_OPERATION,
-      GL_OUT_OF_MEMORY,
-      GL_INVALID_FRAMEBUFFER_OPERATION);
+     (GL_No_Error,
+      GL_Invalid_Enum,
+      GL_Invalid_Value,
+      GL_Invalid_Operation,
+      GL_Out_Of_Memory,
+      GL_Invalid_Framebuffer_Operation);
 
    type Fog_Coordinate_Pointer_Type is
-     (GL_FLOAT);
+     (GL_Float);
 
    type Fog_Mode is
-     (GL_LINEAR);
+     (GL_Linear);
 
    type Fog_Pointer_Type_EXT is
-     (GL_FLOAT);
+     (GL_Float);
 
    type Fog_Pointer_Type_IBM is
-     (GL_FLOAT);
+     (GL_Float);
 
    type Front_Face_Direction is
-     (GL_CW,
-      GL_CCW);
+     (GL_Cw,
+      GL_Ccw);
 
    type Get_PName is
-     (GL_LINE_WIDTH,
-      GL_CULL_FACE,
-      GL_CULL_FACE_MODE,
-      GL_FRONT_FACE,
-      GL_DEPTH_RANGE,
-      GL_DEPTH_TEST,
-      GL_DEPTH_WRITEMASK,
-      GL_DEPTH_CLEAR_VALUE,
-      GL_DEPTH_FUNC,
-      GL_STENCIL_TEST,
-      GL_STENCIL_CLEAR_VALUE,
-      GL_STENCIL_FUNC,
-      GL_STENCIL_VALUE_MASK,
-      GL_STENCIL_FAIL,
-      GL_STENCIL_PASS_DEPTH_FAIL,
-      GL_STENCIL_PASS_DEPTH_PASS,
-      GL_STENCIL_REF,
-      GL_STENCIL_WRITEMASK,
-      GL_VIEWPORT,
-      GL_DITHER,
-      GL_BLEND,
-      GL_SCISSOR_BOX,
-      GL_SCISSOR_TEST,
-      GL_COLOR_CLEAR_VALUE,
-      GL_COLOR_WRITEMASK,
-      GL_UNPACK_ALIGNMENT,
-      GL_PACK_ALIGNMENT,
-      GL_MAX_TEXTURE_SIZE,
-      GL_MAX_VIEWPORT_DIMS,
-      GL_SUBPIXEL_BITS,
-      GL_RED_BITS,
-      GL_GREEN_BITS,
-      GL_BLUE_BITS,
-      GL_ALPHA_BITS,
-      GL_DEPTH_BITS,
-      GL_STENCIL_BITS,
-      GL_TEXTURE_2D,
-      GL_POLYGON_OFFSET_UNITS,
-      GL_BLEND_COLOR,
-      GL_BLEND_EQUATION_RGB,
-      GL_POLYGON_OFFSET_FILL,
-      GL_POLYGON_OFFSET_FACTOR,
-      GL_TEXTURE_BINDING_2D,
-      GL_SAMPLE_BUFFERS,
-      GL_SAMPLES,
-      GL_SAMPLE_COVERAGE_VALUE,
-      GL_SAMPLE_COVERAGE_INVERT,
-      GL_BLEND_DST_RGB,
-      GL_BLEND_SRC_RGB,
-      GL_BLEND_DST_ALPHA,
-      GL_BLEND_SRC_ALPHA,
-      GL_ALIASED_POINT_SIZE_RANGE,
-      GL_ALIASED_LINE_WIDTH_RANGE,
-      GL_ACTIVE_TEXTURE,
-      GL_MAX_RENDERBUFFER_SIZE,
-      GL_TEXTURE_BINDING_CUBE_MAP,
-      GL_MAX_CUBE_MAP_TEXTURE_SIZE,
-      GL_NUM_COMPRESSED_TEXTURE_FORMATS,
-      GL_COMPRESSED_TEXTURE_FORMATS,
-      GL_STENCIL_BACK_FUNC,
-      GL_STENCIL_BACK_FAIL,
-      GL_STENCIL_BACK_PASS_DEPTH_FAIL,
-      GL_STENCIL_BACK_PASS_DEPTH_PASS,
-      GL_BLEND_EQUATION_ALPHA,
-      GL_MAX_VERTEX_ATTRIBS,
-      GL_MAX_TEXTURE_IMAGE_UNITS,
-      GL_ARRAY_BUFFER_BINDING,
-      GL_ELEMENT_ARRAY_BUFFER_BINDING,
-      GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS,
-      GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS,
-      GL_CURRENT_PROGRAM,
-      GL_IMPLEMENTATION_COLOR_READ_TYPE,
-      GL_IMPLEMENTATION_COLOR_READ_FORMAT,
-      GL_STENCIL_BACK_REF,
-      GL_STENCIL_BACK_VALUE_MASK,
-      GL_STENCIL_BACK_WRITEMASK,
-      GL_RENDERBUFFER_BINDING,
-      GL_NUM_SHADER_BINARY_FORMATS,
-      GL_SHADER_COMPILER,
-      GL_MAX_VERTEX_UNIFORM_VECTORS,
-      GL_MAX_VARYING_VECTORS,
-      GL_MAX_FRAGMENT_UNIFORM_VECTORS);
+     (GL_Line_Width,
+      GL_Cull_Face,
+      GL_Cull_Face_Mode,
+      GL_Front_Face,
+      GL_Depth_Range,
+      GL_Depth_Test,
+      GL_Depth_Writemask,
+      GL_Depth_Clear_Value,
+      GL_Depth_Func,
+      GL_Stencil_Test,
+      GL_Stencil_Clear_Value,
+      GL_Stencil_Func,
+      GL_Stencil_Value_Mask,
+      GL_Stencil_Fail,
+      GL_Stencil_Pass_Depth_Fail,
+      GL_Stencil_Pass_Depth_Pass,
+      GL_Stencil_Ref,
+      GL_Stencil_Writemask,
+      GL_Viewport,
+      GL_Dither,
+      GL_Blend,
+      GL_Scissor_Box,
+      GL_Scissor_Test,
+      GL_Color_Clear_Value,
+      GL_Color_Writemask,
+      GL_Unpack_Alignment,
+      GL_Pack_Alignment,
+      GL_Max_Texture_Size,
+      GL_Max_Viewport_Dims,
+      GL_Subpixel_Bits,
+      GL_Red_Bits,
+      GL_Green_Bits,
+      GL_Blue_Bits,
+      GL_Alpha_Bits,
+      GL_Depth_Bits,
+      GL_Stencil_Bits,
+      GL_Texture_2d,
+      GL_Polygon_Offset_Units,
+      GL_Blend_Color,
+      GL_Blend_Equation_Rgb,
+      GL_Polygon_Offset_Fill,
+      GL_Polygon_Offset_Factor,
+      GL_Texture_Binding_2d,
+      GL_Sample_Buffers,
+      GL_Samples,
+      GL_Sample_Coverage_Value,
+      GL_Sample_Coverage_Invert,
+      GL_Blend_Dst_Rgb,
+      GL_Blend_Src_Rgb,
+      GL_Blend_Dst_Alpha,
+      GL_Blend_Src_Alpha,
+      GL_Aliased_Point_Size_Range,
+      GL_Aliased_Line_Width_Range,
+      GL_Active_Texture,
+      GL_Max_Renderbuffer_Size,
+      GL_Texture_Binding_Cube_Map,
+      GL_Max_Cube_Map_Texture_Size,
+      GL_Num_Compressed_Texture_Formats,
+      GL_Compressed_Texture_Formats,
+      GL_Stencil_Back_Func,
+      GL_Stencil_Back_Fail,
+      GL_Stencil_Back_Pass_Depth_Fail,
+      GL_Stencil_Back_Pass_Depth_Pass,
+      GL_Blend_Equation_Alpha,
+      GL_Max_Vertex_Attribs,
+      GL_Max_Texture_Image_Units,
+      GL_Array_Buffer_Binding,
+      GL_Element_Array_Buffer_Binding,
+      GL_Max_Vertex_Texture_Image_Units,
+      GL_Max_Combined_Texture_Image_Units,
+      GL_Current_Program,
+      GL_Implementation_Color_Read_Type,
+      GL_Implementation_Color_Read_Format,
+      GL_Stencil_Back_Ref,
+      GL_Stencil_Back_Value_Mask,
+      GL_Stencil_Back_Writemask,
+      GL_Renderbuffer_Binding,
+      GL_Num_Shader_Binary_Formats,
+      GL_Shader_Compiler,
+      GL_Max_Vertex_Uniform_Vectors,
+      GL_Max_Varying_Vectors,
+      GL_Max_Fragment_Uniform_Vectors);
 
    type Get_Texture_Parameter is
-     (GL_TEXTURE_MAG_FILTER,
-      GL_TEXTURE_MIN_FILTER,
-      GL_TEXTURE_WRAP_S,
-      GL_TEXTURE_WRAP_T);
+     (GL_Texture_Mag_Filter,
+      GL_Texture_Min_Filter,
+      GL_Texture_Wrap_S,
+      GL_Texture_Wrap_T);
 
    type Hint_Mode is
-     (GL_DONT_CARE,
-      GL_FASTEST,
-      GL_NICEST);
+     (GL_Dont_Care,
+      GL_Fastest,
+      GL_Nicest);
 
    type Hint_Target is
-     (GL_GENERATE_MIPMAP_HINT);
+     (GL_Generate_Mipmap_Hint);
 
    type Index_Pointer_Type is
-     (GL_SHORT,
-      GL_INT,
-      GL_FLOAT);
+     (GL_Short,
+      GL_Int,
+      GL_Float);
 
    type Light_Env_Mode_SGIX is
-     (GL_REPLACE);
+     (GL_Replace);
 
    type List_Name_Type is
-     (GL_BYTE,
-      GL_UNSIGNED_BYTE,
-      GL_SHORT,
-      GL_UNSIGNED_SHORT,
-      GL_INT,
-      GL_UNSIGNED_INT,
-      GL_FLOAT);
+     (GL_Byte,
+      GL_Unsigned_Byte,
+      GL_Short,
+      GL_Unsigned_Short,
+      GL_Int,
+      GL_Unsigned_Int,
+      GL_Float);
 
    type Logic_Op is
-     (GL_INVERT);
+     (GL_Invert);
 
    type Material_Face is
-     (GL_FRONT,
-      GL_BACK,
-      GL_FRONT_AND_BACK);
+     (GL_Front,
+      GL_Back,
+      GL_Front_And_Back);
 
    type Matrix_Mode is
-     (GL_TEXTURE);
+     (GL_Texture);
 
    type Normal_Pointer_Type is
-     (GL_BYTE,
-      GL_SHORT,
-      GL_INT,
-      GL_FLOAT);
+     (GL_Byte,
+      GL_Short,
+      GL_Int,
+      GL_Float);
 
    type Pixel_Format is
-     (GL_UNSIGNED_SHORT,
-      GL_UNSIGNED_INT,
-      GL_DEPTH_COMPONENT,
-      GL_ALPHA,
-      GL_RGB,
-      GL_RGBA,
-      GL_LUMINANCE,
-      GL_LUMINANCE_ALPHA);
+     (GL_Unsigned_Short,
+      GL_Unsigned_Int,
+      GL_Depth_Component,
+      GL_Alpha,
+      GL_Rgb,
+      GL_Rgba,
+      GL_Luminance,
+      GL_Luminance_Alpha);
 
    type Internal_Format is
-     (GL_DEPTH_COMPONENT,
-      GL_RGB,
-      GL_RGBA,
-      GL_RGBA4,
-      GL_RGB5_A1,
-      GL_DEPTH_COMPONENT16);
+     (GL_Depth_Component,
+      GL_Rgb,
+      GL_Rgba,
+      GL_Rgba4,
+      GL_Rgb5_A1,
+      GL_Depth_Component16);
 
    type Pixel_Store_Parameter is
-     (GL_UNPACK_ALIGNMENT,
-      GL_PACK_ALIGNMENT);
+     (GL_Unpack_Alignment,
+      GL_Pack_Alignment);
 
    type Pixel_Tex_Gen_Mode is
-     (GL_NONE,
-      GL_RGB,
-      GL_RGBA,
-      GL_LUMINANCE,
-      GL_LUMINANCE_ALPHA);
+     (GL_None,
+      GL_Rgb,
+      GL_Rgba,
+      GL_Luminance,
+      GL_Luminance_Alpha);
 
    type Pixel_Type is
-     (GL_BYTE,
-      GL_UNSIGNED_BYTE,
-      GL_SHORT,
-      GL_UNSIGNED_SHORT,
-      GL_INT,
-      GL_UNSIGNED_INT,
-      GL_FLOAT,
-      GL_UNSIGNED_SHORT_4_4_4_4,
-      GL_UNSIGNED_SHORT_5_5_5_1);
+     (GL_Byte,
+      GL_Unsigned_Byte,
+      GL_Short,
+      GL_Unsigned_Short,
+      GL_Int,
+      GL_Unsigned_Int,
+      GL_Float,
+      GL_Unsigned_Short_4_4_4_4,
+      GL_Unsigned_Short_5_5_5_1);
 
    type Primitive_Type is
-     (GL_POINTS,
-      GL_LINES,
-      GL_LINE_LOOP,
-      GL_LINE_STRIP,
-      GL_TRIANGLES,
-      GL_TRIANGLE_STRIP,
-      GL_TRIANGLE_FAN);
+     (GL_Points,
+      GL_Lines,
+      GL_Line_Loop,
+      GL_Line_Strip,
+      GL_Triangles,
+      GL_Triangle_Strip,
+      GL_Triangle_Fan);
 
    type Read_Buffer_Mode is
-     (GL_FRONT,
-      GL_BACK);
+     (GL_Front,
+      GL_Back);
 
    type Stencil_Face_Direction is
-     (GL_FRONT,
-      GL_BACK,
-      GL_FRONT_AND_BACK);
+     (GL_Front,
+      GL_Back,
+      GL_Front_And_Back);
 
    type Stencil_Function is
-     (GL_NEVER,
-      GL_LESS,
-      GL_EQUAL,
-      GL_LEQUAL,
-      GL_GREATER,
-      GL_NOTEQUAL,
-      GL_GEQUAL,
-      GL_ALWAYS);
+     (GL_Never,
+      GL_Less,
+      GL_Equal,
+      GL_Lequal,
+      GL_Greater,
+      GL_Notequal,
+      GL_Gequal,
+      GL_Always);
 
    type Stencil_Op is
-     (GL_ZERO,
-      GL_INVERT,
-      GL_KEEP,
-      GL_REPLACE,
-      GL_INCR,
-      GL_DECR,
-      GL_INCR_WRAP,
-      GL_DECR_WRAP);
+     (GL_Zero,
+      GL_Invert,
+      GL_Keep,
+      GL_Replace,
+      GL_Incr,
+      GL_Decr,
+      GL_Incr_Wrap,
+      GL_Decr_Wrap);
 
    type String_Name is
-     (GL_VENDOR,
-      GL_RENDERER,
-      GL_VERSION,
-      GL_EXTENSIONS,
-      GL_SHADING_LANGUAGE_VERSION);
+     (GL_Vendor,
+      GL_Renderer,
+      GL_Version,
+      GL_Extensions,
+      GL_Shading_Language_Version);
 
    type Tex_Coord_Pointer_Type is
-     (GL_SHORT,
-      GL_INT,
-      GL_FLOAT);
+     (GL_Short,
+      GL_Int,
+      GL_Float);
 
    type Texture_Env_Mode is
-     (GL_BLEND);
+     (GL_Blend);
 
    type Texture_Mag_Filter is
-     (GL_NEAREST,
-      GL_LINEAR);
+     (GL_Nearest,
+      GL_Linear);
 
    type Texture_Min_Filter is
-     (GL_NEAREST,
-      GL_LINEAR,
-      GL_NEAREST_MIPMAP_NEAREST,
-      GL_LINEAR_MIPMAP_NEAREST,
-      GL_NEAREST_MIPMAP_LINEAR,
-      GL_LINEAR_MIPMAP_LINEAR);
+     (GL_Nearest,
+      GL_Linear,
+      GL_Nearest_Mipmap_Nearest,
+      GL_Linear_Mipmap_Nearest,
+      GL_Nearest_Mipmap_Linear,
+      GL_Linear_Mipmap_Linear);
 
    type Texture_Parameter_Name is
-     (GL_TEXTURE_MAG_FILTER,
-      GL_TEXTURE_MIN_FILTER,
-      GL_TEXTURE_WRAP_S,
-      GL_TEXTURE_WRAP_T);
+     (GL_Texture_Mag_Filter,
+      GL_Texture_Min_Filter,
+      GL_Texture_Wrap_S,
+      GL_Texture_Wrap_T);
 
    type Texture_Target is
-     (GL_TEXTURE_2D,
-      GL_TEXTURE_CUBE_MAP,
-      GL_TEXTURE_CUBE_MAP_POSITIVE_X,
-      GL_TEXTURE_CUBE_MAP_NEGATIVE_X,
-      GL_TEXTURE_CUBE_MAP_POSITIVE_Y,
-      GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,
-      GL_TEXTURE_CUBE_MAP_POSITIVE_Z,
-      GL_TEXTURE_CUBE_MAP_NEGATIVE_Z);
+     (GL_Texture_2d,
+      GL_Texture_Cube_Map,
+      GL_Texture_Cube_Map_Positive_X,
+      GL_Texture_Cube_Map_Negative_X,
+      GL_Texture_Cube_Map_Positive_Y,
+      GL_Texture_Cube_Map_Negative_Y,
+      GL_Texture_Cube_Map_Positive_Z,
+      GL_Texture_Cube_Map_Negative_Z);
 
    type Texture_Wrap_Mode is
-     (GL_REPEAT,
-      GL_CLAMP_TO_EDGE);
+     (GL_Repeat,
+      GL_Clamp_To_Edge);
 
    type Vertex_Pointer_Type is
-     (GL_SHORT,
-      GL_INT,
-      GL_FLOAT);
+     (GL_Short,
+      GL_Int,
+      GL_Float);
 
    type Framebuffer_Attachment is
-     (GL_COLOR_ATTACHMENT0,
-      GL_DEPTH_ATTACHMENT);
+     (GL_Color_Attachment0,
+      GL_Depth_Attachment);
 
    type Renderbuffer_Target is
-     (GL_RENDERBUFFER);
+     (GL_Renderbuffer);
 
    type Framebuffer_Target is
-     (GL_FRAMEBUFFER);
+     (GL_Framebuffer);
 
    type Texture_Unit is
-     (GL_TEXTURE0,
-      GL_TEXTURE1,
-      GL_TEXTURE2,
-      GL_TEXTURE3,
-      GL_TEXTURE4,
-      GL_TEXTURE5,
-      GL_TEXTURE6,
-      GL_TEXTURE7,
-      GL_TEXTURE8,
-      GL_TEXTURE9,
-      GL_TEXTURE10,
-      GL_TEXTURE11,
-      GL_TEXTURE12,
-      GL_TEXTURE13,
-      GL_TEXTURE14,
-      GL_TEXTURE15,
-      GL_TEXTURE16,
-      GL_TEXTURE17,
-      GL_TEXTURE18,
-      GL_TEXTURE19,
-      GL_TEXTURE20,
-      GL_TEXTURE21,
-      GL_TEXTURE22,
-      GL_TEXTURE23,
-      GL_TEXTURE24,
-      GL_TEXTURE25,
-      GL_TEXTURE26,
-      GL_TEXTURE27,
-      GL_TEXTURE28,
-      GL_TEXTURE29,
-      GL_TEXTURE30,
-      GL_TEXTURE31);
+     (GL_Texture0,
+      GL_Texture1,
+      GL_Texture2,
+      GL_Texture3,
+      GL_Texture4,
+      GL_Texture5,
+      GL_Texture6,
+      GL_Texture7,
+      GL_Texture8,
+      GL_Texture9,
+      GL_Texture10,
+      GL_Texture11,
+      GL_Texture12,
+      GL_Texture13,
+      GL_Texture14,
+      GL_Texture15,
+      GL_Texture16,
+      GL_Texture17,
+      GL_Texture18,
+      GL_Texture19,
+      GL_Texture20,
+      GL_Texture21,
+      GL_Texture22,
+      GL_Texture23,
+      GL_Texture24,
+      GL_Texture25,
+      GL_Texture26,
+      GL_Texture27,
+      GL_Texture28,
+      GL_Texture29,
+      GL_Texture30,
+      GL_Texture31);
 
    type Framebuffer_Status is
-     (GL_FRAMEBUFFER_COMPLETE,
-      GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT,
-      GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT,
-      GL_FRAMEBUFFER_UNSUPPORTED);
+     (GL_Framebuffer_Complete,
+      GL_Framebuffer_Incomplete_Attachment,
+      GL_Framebuffer_Incomplete_Missing_Attachment,
+      GL_Framebuffer_Unsupported);
 
    type Graphics_Reset_Status is
-     (GL_NO_ERROR);
+     (GL_No_Error);
 
    type Path_Fill_Mode is
-     (GL_INVERT);
+     (GL_Invert);
 
    type Vertex_Buffer_Object_Parameter is
-     (GL_BUFFER_SIZE,
-      GL_BUFFER_USAGE);
+     (GL_Buffer_Size,
+      GL_Buffer_Usage);
 
    type Renderbuffer_Parameter_Name is
-     (GL_RENDERBUFFER_WIDTH,
-      GL_RENDERBUFFER_HEIGHT,
-      GL_RENDERBUFFER_INTERNAL_FORMAT,
-      GL_RENDERBUFFER_RED_SIZE,
-      GL_RENDERBUFFER_GREEN_SIZE,
-      GL_RENDERBUFFER_BLUE_SIZE,
-      GL_RENDERBUFFER_ALPHA_SIZE,
-      GL_RENDERBUFFER_DEPTH_SIZE,
-      GL_RENDERBUFFER_STENCIL_SIZE);
+     (GL_Renderbuffer_Width,
+      GL_Renderbuffer_Height,
+      GL_Renderbuffer_Internal_Format,
+      GL_Renderbuffer_Red_Size,
+      GL_Renderbuffer_Green_Size,
+      GL_Renderbuffer_Blue_Size,
+      GL_Renderbuffer_Alpha_Size,
+      GL_Renderbuffer_Depth_Size,
+      GL_Renderbuffer_Stencil_Size);
 
    type Vertex_Buffer_Object_Usage is
-     (GL_STREAM_DRAW,
-      GL_STATIC_DRAW,
-      GL_DYNAMIC_DRAW);
+     (GL_Stream_Draw,
+      GL_Static_Draw,
+      GL_Dynamic_Draw);
 
    type Blending_Factor is
-     (GL_ZERO,
-      GL_ONE,
-      GL_SRC_COLOR,
-      GL_ONE_MINUS_SRC_COLOR,
-      GL_SRC_ALPHA,
-      GL_ONE_MINUS_SRC_ALPHA,
-      GL_DST_ALPHA,
-      GL_ONE_MINUS_DST_ALPHA,
-      GL_DST_COLOR,
-      GL_ONE_MINUS_DST_COLOR,
-      GL_SRC_ALPHA_SATURATE,
-      GL_CONSTANT_COLOR,
-      GL_ONE_MINUS_CONSTANT_COLOR,
-      GL_CONSTANT_ALPHA,
-      GL_ONE_MINUS_CONSTANT_ALPHA);
+     (GL_Zero,
+      GL_One,
+      GL_Src_Color,
+      GL_One_Minus_Src_Color,
+      GL_Src_Alpha,
+      GL_One_Minus_Src_Alpha,
+      GL_Dst_Alpha,
+      GL_One_Minus_Dst_Alpha,
+      GL_Dst_Color,
+      GL_One_Minus_Dst_Color,
+      GL_Src_Alpha_Saturate,
+      GL_Constant_Color,
+      GL_One_Minus_Constant_Color,
+      GL_Constant_Alpha,
+      GL_One_Minus_Constant_Alpha);
 
    type Blit_Framebuffer_Filter is
-     (GL_NEAREST,
-      GL_LINEAR);
+     (GL_Nearest,
+      GL_Linear);
 
    type Buffer_Storage_Target is
-     (GL_ARRAY_BUFFER,
-      GL_ELEMENT_ARRAY_BUFFER);
+     (GL_Array_Buffer,
+      GL_Element_Array_Buffer);
 
    type Check_Framebuffer_Status_Target is
-     (GL_FRAMEBUFFER);
+     (GL_Framebuffer);
 
    type Copy_Buffer_Sub_Data_Target is
-     (GL_ARRAY_BUFFER,
-      GL_ELEMENT_ARRAY_BUFFER);
+     (GL_Array_Buffer,
+      GL_Element_Array_Buffer);
 
    type Shader_Type is
-     (GL_FRAGMENT_SHADER,
-      GL_VERTEX_SHADER);
+     (GL_Fragment_Shader,
+      GL_Vertex_Shader);
 
    type Debug_Source is
-     (GL_DONT_CARE);
+     (GL_Dont_Care);
 
    type Debug_Type is
-     (GL_DONT_CARE);
+     (GL_Dont_Care);
 
    type Debug_Severity is
-     (GL_DONT_CARE);
+     (GL_Dont_Care);
 
    type Sampler_Parameter_Name is
-     (GL_TEXTURE_MAG_FILTER,
-      GL_TEXTURE_MIN_FILTER,
-      GL_TEXTURE_WRAP_S,
-      GL_TEXTURE_WRAP_T);
+     (GL_Texture_Mag_Filter,
+      GL_Texture_Min_Filter,
+      GL_Texture_Wrap_S,
+      GL_Texture_Wrap_T);
 
    type Object_Identifier is
-     (GL_TEXTURE,
-      GL_FRAMEBUFFER,
-      GL_RENDERBUFFER);
+     (GL_Texture,
+      GL_Framebuffer,
+      GL_Renderbuffer);
 
    type Color_Buffer is
-     (GL_NONE,
-      GL_FRONT,
-      GL_BACK,
-      GL_FRONT_AND_BACK,
-      GL_COLOR_ATTACHMENT0);
+     (GL_None,
+      GL_Front,
+      GL_Back,
+      GL_Front_And_Back,
+      GL_Color_Attachment0);
 
    type Vertex_Array_PName is
-     (GL_VERTEX_ATTRIB_ARRAY_ENABLED,
-      GL_VERTEX_ATTRIB_ARRAY_SIZE,
-      GL_VERTEX_ATTRIB_ARRAY_STRIDE,
-      GL_VERTEX_ATTRIB_ARRAY_TYPE,
-      GL_VERTEX_ATTRIB_ARRAY_NORMALIZED);
+     (GL_Vertex_Attrib_Array_Enabled,
+      GL_Vertex_Attrib_Array_Size,
+      GL_Vertex_Attrib_Array_Stride,
+      GL_Vertex_Attrib_Array_Type,
+      GL_Vertex_Attrib_Array_Normalized);
 
    type Shader_Parameter_Name is
-     (GL_SHADER_TYPE,
-      GL_DELETE_STATUS,
-      GL_COMPILE_STATUS,
-      GL_INFO_LOG_LENGTH,
-      GL_SHADER_SOURCE_LENGTH);
+     (GL_Shader_Type,
+      GL_Delete_Status,
+      GL_Compile_Status,
+      GL_Info_Log_Length,
+      GL_Shader_Source_Length);
 
    type Pipeline_Parameter_Name is
-     (GL_FRAGMENT_SHADER,
-      GL_VERTEX_SHADER,
-      GL_INFO_LOG_LENGTH);
+     (GL_Fragment_Shader,
+      GL_Vertex_Shader,
+      GL_Info_Log_Length);
 
    type Vertex_Attrib_Enum is
-     (GL_VERTEX_ATTRIB_ARRAY_ENABLED,
-      GL_VERTEX_ATTRIB_ARRAY_SIZE,
-      GL_VERTEX_ATTRIB_ARRAY_STRIDE,
-      GL_VERTEX_ATTRIB_ARRAY_TYPE,
-      GL_CURRENT_VERTEX_ATTRIB,
-      GL_VERTEX_ATTRIB_ARRAY_NORMALIZED,
-      GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING);
+     (GL_Vertex_Attrib_Array_Enabled,
+      GL_Vertex_Attrib_Array_Size,
+      GL_Vertex_Attrib_Array_Stride,
+      GL_Vertex_Attrib_Array_Type,
+      GL_Current_Vertex_Attrib,
+      GL_Vertex_Attrib_Array_Normalized,
+      GL_Vertex_Attrib_Array_Buffer_Binding);
 
    type Vertex_Attrib_Type is
-     (GL_BYTE,
-      GL_UNSIGNED_BYTE,
-      GL_SHORT,
-      GL_UNSIGNED_SHORT,
-      GL_INT,
-      GL_UNSIGNED_INT,
-      GL_FLOAT,
-      GL_FIXED);
+     (GL_Byte,
+      GL_Unsigned_Byte,
+      GL_Short,
+      GL_Unsigned_Short,
+      GL_Int,
+      GL_Unsigned_Int,
+      GL_Float,
+      GL_Fixed);
 
    type Attribute_Type is
-     (GL_FLOAT_VEC2,
-      GL_FLOAT_VEC3,
-      GL_FLOAT_VEC4,
-      GL_INT_VEC2,
-      GL_INT_VEC3,
-      GL_INT_VEC4,
-      GL_BOOL,
-      GL_BOOL_VEC2,
-      GL_BOOL_VEC3,
-      GL_BOOL_VEC4,
-      GL_FLOAT_MAT2,
-      GL_FLOAT_MAT3,
-      GL_FLOAT_MAT4,
-      GL_SAMPLER_2D,
-      GL_SAMPLER_CUBE);
+     (GL_Float_Vec2,
+      GL_Float_Vec3,
+      GL_Float_Vec4,
+      GL_Int_Vec2,
+      GL_Int_Vec3,
+      GL_Int_Vec4,
+      GL_Bool,
+      GL_Bool_Vec2,
+      GL_Bool_Vec3,
+      GL_Bool_Vec4,
+      GL_Float_Mat2,
+      GL_Float_Mat3,
+      GL_Float_Mat4,
+      GL_Sampler_2d,
+      GL_Sampler_Cube);
 
    type Internal_Format_PName is
-     (GL_SAMPLES);
+     (GL_Samples);
 
    type Framebuffer_Attachment_Parameter_Name is
-     (GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME,
-      GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL,
-      GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE);
+     (GL_Framebuffer_Attachment_Object_Name,
+      GL_Framebuffer_Attachment_Texture_Level,
+      GL_Framebuffer_Attachment_Texture_Cube_Map_Face);
 
    type Precision_Type is
-     (GL_LOW_FLOAT,
-      GL_MEDIUM_FLOAT,
-      GL_HIGH_FLOAT,
-      GL_LOW_INT,
-      GL_MEDIUM_INT,
-      GL_HIGH_INT);
+     (GL_Low_Float,
+      GL_Medium_Float,
+      GL_High_Float,
+      GL_Low_Int,
+      GL_Medium_Int,
+      GL_High_Int);
 
    type Vertex_Attrib_Pointer_Type is
-     (GL_BYTE,
-      GL_UNSIGNED_BYTE,
-      GL_SHORT,
-      GL_UNSIGNED_SHORT,
-      GL_INT,
-      GL_UNSIGNED_INT,
-      GL_FLOAT,
-      GL_FIXED);
+     (GL_Byte,
+      GL_Unsigned_Byte,
+      GL_Short,
+      GL_Unsigned_Short,
+      GL_Int,
+      GL_Unsigned_Int,
+      GL_Float,
+      GL_Fixed);
 
    type Get_Framebuffer_Parameter is
-     (GL_SAMPLE_BUFFERS,
-      GL_SAMPLES,
-      GL_IMPLEMENTATION_COLOR_READ_TYPE,
-      GL_IMPLEMENTATION_COLOR_READ_FORMAT);
+     (GL_Sample_Buffers,
+      GL_Samples,
+      GL_Implementation_Color_Read_Type,
+      GL_Implementation_Color_Read_Format);
 
    type Path_Gen_Mode is
-     (GL_NONE);
+     (GL_None);
 
    type Path_Transform_Type is
-     (GL_NONE);
+     (GL_None);
 
    type Path_Font_Style is
-     (GL_NONE);
+     (GL_None);
 
    type Program_Property_ARB is
-     (GL_DELETE_STATUS,
-      GL_LINK_STATUS,
-      GL_VALIDATE_STATUS,
-      GL_INFO_LOG_LENGTH,
-      GL_ATTACHED_SHADERS,
-      GL_ACTIVE_UNIFORMS,
-      GL_ACTIVE_UNIFORM_MAX_LENGTH,
-      GL_ACTIVE_ATTRIBUTES,
-      GL_ACTIVE_ATTRIBUTE_MAX_LENGTH);
+     (GL_Delete_Status,
+      GL_Link_Status,
+      GL_Validate_Status,
+      GL_Info_Log_Length,
+      GL_Attached_Shaders,
+      GL_Active_Uniforms,
+      GL_Active_Uniform_Max_Length,
+      GL_Active_Attributes,
+      GL_Active_Attribute_Max_Length);
 
    type Context_WebGL_Type is new Context_Type with private;
    type Context_WebGL_Access is access all Context_WebGL_Type;
@@ -1387,24 +1387,6 @@ package Gnoga.Gui.Element.Canvas.Context_WebGL is
       Item_Type : Pixel_Type;
       Pixels : Uint8_Array);
 
-   procedure Tex_Image_2D
-     (Context        : in out Context_WebGL_Type'Class;
-      Target         : Texture_Target;
-      Level          : GLint;
-      Internalformat : Internal_Format;
-      Format         : Pixel_Format;
-      Item_Type      : Pixel_Type;
-      Image          : Gnoga.Gui.Element.Element_Type'Class);
-
-   procedure Tex_Image_2D
-     (Context        : in out Context_WebGL_Type'Class;
-      Target         : Texture_Target;
-      Level          : GLint;
-      Internalformat : Internal_Format;
-      Format         : Pixel_Format;
-      Item_Type      : Pixel_Type;
-      Image_Id       : String);
-
    procedure Tex_Parameter
      (Context : in out Context_WebGL_Type'Class;
       Target : Texture_Target;
@@ -1675,6 +1657,35 @@ package Gnoga.Gui.Element.Canvas.Context_WebGL is
       Progam : GLuint;
       Parameter : Program_Property_ARB)
      return Boolean;
+
+   procedure Set_Texture_Mag_Filter
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Mag_Filter);
+
+   procedure Set_Texture_Min_Filter
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Min_Filter);
+
+   procedure Texture_Wrap_S
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Wrap_Mode);
+
+   procedure Texture_Wrap_T
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Wrap_Mode);
+
+   procedure Tex_Image_2D
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Level : GLint;
+      Internalformat : Internal_Format;
+      Format : Pixel_Format;
+      Item_Type : Pixel_Type;
+      Image_Id : String);
 
 private
 

@@ -1,3 +1,6 @@
+--  Ported from https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API
+--                         /Tutorial/Getting_started_with_WebGL
+
 package body Tutorials.Clear_Screen_To_Black is
 
    type Tutorial_Type is
@@ -38,7 +41,7 @@ package body Tutorials.Clear_Screen_To_Black is
       pragma Unreferenced (View);
    begin
       Tutorial.Context.Clear_Color (0.0, 0.0, 0.0, 1.0);
-      Tutorial.Context.Clear ((1 => GL_COLOR_BUFFER_BIT));
+      Tutorial.Context.Clear ((1 => GL_Color_Buffer_Bit));
    end Start;
 
    ----------

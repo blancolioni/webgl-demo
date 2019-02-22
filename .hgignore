@@ -1,0 +1,4 @@
+syntax: glob
+bin
+obj/b__driver.adb
+obj
