@@ -144,17 +144,17 @@ package body Tutorials.Rotating_Cube is
       return GLuint
    is
       Vertex_Shader : constant GLuint :=
-                        Load_Shader (Context, GL_VERTEX_SHADER,
+                        Load_Shader (Context, GL_Vertex_Shader,
                                      Vertex_Shader_Source);
       Fragment_Shader : constant GLuint :=
-                          Load_Shader (Context, GL_FRAGMENT_SHADER,
+                          Load_Shader (Context, GL_Fragment_Shader,
                                        Fragment_Shader_Source);
       Program         : constant GLuint := Context.Create_Program;
    begin
       Context.Attach_Shader (Program, Vertex_Shader);
       Context.Attach_Shader (Program, Fragment_Shader);
       Context.Link_Program (Program);
-      if not Context.Get_Program_Parameter (Program, GL_LINK_STATUS) then
+      if not Context.Get_Program_Parameter (Program, GL_Link_Status) then
          raise Program_Error with "link error";
       end if;
       return Program;
@@ -174,7 +174,7 @@ package body Tutorials.Rotating_Cube is
    begin
       Context.Shader_Source (Shader, Source);
       Context.Compile_Shader (Shader);
-      if not Context.Get_Shader_Parameter (Shader, GL_COMPILE_STATUS) then
+      if not Context.Get_Shader_Parameter (Shader, GL_Compile_Status) then
          raise Program_Error with "an error occurred compilng the shader";
       end if;
       return Shader;
@@ -212,20 +212,20 @@ package body Tutorials.Rotating_Cube is
       Context.Rotate (Model_View_Matrix, State.Rotation, 0.0, 0.0, 1.0);
       Context.Rotate (Model_View_Matrix, State.Rotation * 0.7, 0.0, 1.0, 0.0);
 
-      Context.Clear ((GL_COLOR_BUFFER_BIT, GL_DEPTH_BUFFER_BIT));
+      Context.Clear ((GL_Color_Buffer_Bit, GL_Depth_Buffer_Bit));
 
-      Context.Bind_Buffer (GL_ARRAY_BUFFER, State.Position_Buffer);
-      Context.Bind_Buffer (GL_ELEMENT_ARRAY_BUFFER, State.Index_Buffer);
+      Context.Bind_Buffer (GL_Array_Buffer, State.Position_Buffer);
+      Context.Bind_Buffer (GL_Element_Array_Buffer, State.Index_Buffer);
 
       Context.Vertex_Attrib_Pointer
         (State.Vertex_Position, 3,
-         GL_FLOAT, False, 0, 0);
+         GL_Float, False, 0, 0);
       Context.Enable_Vertex_Attrib_Array (State.Vertex_Position);
 
-      Context.Bind_Buffer (GL_ARRAY_BUFFER, State.Color_Buffer);
+      Context.Bind_Buffer (GL_Array_Buffer, State.Color_Buffer);
       Context.Vertex_Attrib_Pointer
         (State.Vertex_Color, 4,
-         GL_FLOAT, False, 0, 0);
+         GL_Float, False, 0, 0);
       Context.Enable_Vertex_Attrib_Array (State.Vertex_Color);
 
       Context.Use_Program (State.Program);
@@ -235,9 +235,9 @@ package body Tutorials.Rotating_Cube is
         (State.Model_View_Matrix, Model_View_Matrix);
 
       Context.Draw_Elements
-        (Mode         => GL_TRIANGLES,
+        (Mode         => GL_Triangles,
          Count        => 36,
-         ElementType  => GL_UNSIGNED_SHORT,
+         ElementType  => GL_Unsigned_Short,
          Offset       => 0);
 
       Context.End_Render;
@@ -300,15 +300,15 @@ package body Tutorials.Rotating_Cube is
 
       Tutorial.State.Position_Buffer := Context.Create_Buffer;
       Context.Bind_Buffer
-        (GL_ARRAY_BUFFER, Tutorial.State.Position_Buffer);
+        (GL_Array_Buffer, Tutorial.State.Position_Buffer);
 
       Context.Buffer_Data
-        (Target => GL_ARRAY_BUFFER,
+        (Target => GL_Array_Buffer,
          Data   => Positions,
-         Usage  => GL_STATIC_DRAW);
+         Usage  => GL_Static_Draw);
 
       Tutorial.State.Color_Buffer := Context.Create_Buffer;
-      Context.Bind_Buffer (GL_ARRAY_BUFFER, Tutorial.State.Color_Buffer);
+      Context.Bind_Buffer (GL_Array_Buffer, Tutorial.State.Color_Buffer);
 
       declare
          Color : Float_Array (1 .. 6 * 4 * 4);
@@ -322,18 +322,18 @@ package body Tutorials.Rotating_Cube is
             end loop;
          end loop;
 
-         Context.Buffer_Data (GL_ARRAY_BUFFER, Color, GL_STATIC_DRAW);
+         Context.Buffer_Data (GL_Array_Buffer, Color, GL_Static_Draw);
       end;
 
       Tutorial.State.Index_Buffer := Context.Create_Buffer;
       Context.Bind_Buffer
-        (GL_ELEMENT_ARRAY_BUFFER, Tutorial.State.Index_Buffer);
-      Context.Buffer_Data (GL_ELEMENT_ARRAY_BUFFER, Indices, GL_STATIC_DRAW);
+        (GL_Element_Array_Buffer, Tutorial.State.Index_Buffer);
+      Context.Buffer_Data (GL_Element_Array_Buffer, Indices, GL_Static_Draw);
 
       Context.Clear_Color (0.0, 0.0, 0.0, 1.0);
       Context.Clear_Depth (1.0);
-      Context.Enable (GL_DEPTH_TEST);
-      Context.Depth_Func (GL_LEQUAL);
+      Context.Enable (GL_Depth_Test);
+      Context.Depth_Func (GL_Lequal);
 
       Tutorial.State.Aspect_Ratio :=
         GLfloat (Tutorial.Canvas.Width)

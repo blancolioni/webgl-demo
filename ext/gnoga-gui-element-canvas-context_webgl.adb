@@ -1764,7 +1764,7 @@ Context.Execute (
             "Illegal call to glCreateProgram during render";
       else
          declare
-            Result : constant GLuint :=
+            Result : constant GLuint := 
            Support.Indexed_Javascript_Object (Context,
         "createProgram("
 
@@ -1790,7 +1790,7 @@ Context.Execute (
             "Illegal call to glCreateShader during render";
       else
          declare
-            Result : constant GLuint :=
+            Result : constant GLuint := 
            Support.Indexed_Javascript_Object (Context,
         "createShader("
          & Shader_Type_Values (Item_Type)'Image
@@ -2586,7 +2586,7 @@ Context.Execute (
             "Illegal call to glGetAttribLocation during render";
       else
          declare
-            Result : constant GLuint :=
+            Result : constant GLuint := 
            GLuint'Value (Context.Execute (
         "getAttribLocation("
          & Support.Indexed_Object_Reference (Context, Program) & ","
@@ -3012,7 +3012,7 @@ Context.Execute (
             "Illegal call to glGetUniformLocation during render";
       else
          declare
-            Result : constant GLuint :=
+            Result : constant GLuint := 
            Support.Indexed_Javascript_Object (Context,
         "getUniformLocation("
          & Support.Indexed_Object_Reference (Context, Program) & ","
@@ -3176,7 +3176,7 @@ Context.Execute (
             "Illegal call to glIsBuffer during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "isBuffer("
          & Buffer'Image
@@ -3202,7 +3202,7 @@ Context.Execute (
             "Illegal call to glIsEnabled during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "isEnabled("
          & Enable_Cap_Values (Cap)'Image
@@ -3228,7 +3228,7 @@ Context.Execute (
             "Illegal call to glIsFramebuffer during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "isFramebuffer("
          & Framebuffer'Image
@@ -3254,7 +3254,7 @@ Context.Execute (
             "Illegal call to glIsProgram during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "isProgram("
          & Support.Indexed_Object_Reference (Context, Program)
@@ -3280,7 +3280,7 @@ Context.Execute (
             "Illegal call to glIsRenderbuffer during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "isRenderbuffer("
          & Renderbuffer'Image
@@ -3306,7 +3306,7 @@ Context.Execute (
             "Illegal call to glIsShader during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "isShader("
          & Support.Indexed_Object_Reference (Context, Shader)
@@ -3332,7 +3332,7 @@ Context.Execute (
             "Illegal call to glIsTexture during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "isTexture("
          & Texture'Image
@@ -4021,56 +4021,6 @@ Context.Execute (
          & "new Uint8Array([" & To_String (Data_Image) & "])"
         & ")");
       end if;
-   end Tex_Image_2D;
-
-   ------------------
-   -- Tex_Image_2D --
-   ------------------
-
-   procedure Tex_Image_2D
-     (Context        : in out Context_WebGL_Type'Class;
-      Target         : Texture_Target;
-      Level          : GLint;
-      Internalformat : Internal_Format;
-      Format         : Pixel_Format;
-      Item_Type      : Pixel_Type;
-      Image          : Gnoga.Gui.Element.Element_Type'Class)
-   is
-   begin
-      Context.Execute (
-                       "texImage2D("
-                       & Texture_Target_Values (Target)'Image & ","
-                       & Level'Image & ","
-                       & Internal_Format_Values (Internalformat)'Image & ","
-                       & Pixel_Format_Values (Format)'Image & ","
-                       & Pixel_Type_Values (Item_Type)'Image & ","
-                       & Image.jQuery & ".get(0)"
-                       & ")");
-   end Tex_Image_2D;
-
-   ------------------
-   -- Tex_Image_2D --
-   ------------------
-
-   procedure Tex_Image_2D
-     (Context        : in out Context_WebGL_Type'Class;
-      Target         : Texture_Target;
-      Level          : GLint;
-      Internalformat : Internal_Format;
-      Format         : Pixel_Format;
-      Item_Type      : Pixel_Type;
-      Image_Id       : String)
-   is
-   begin
-      Context.Execute (
-                       "texImage2D("
-                       & Texture_Target_Values (Target)'Image & ","
-                       & Level'Image & ","
-                       & Internal_Format_Values (Internalformat)'Image & ","
-                       & Pixel_Format_Values (Format)'Image & ","
-                       & Pixel_Type_Values (Item_Type)'Image & ","
-                       & "$('#" & Image_Id & "')" & ".get(0)"
-                       & ")");
    end Tex_Image_2D;
 
    ---------------------
@@ -5244,7 +5194,7 @@ Context.Execute (
             "Illegal call to glCreateBuffer during render";
       else
          declare
-            Result : constant GLuint :=
+            Result : constant GLuint := 
            Support.Indexed_Javascript_Object (Context,
         "createBuffer("
 
@@ -5269,7 +5219,7 @@ Context.Execute (
             "Illegal call to glCreateTexture during render";
       else
          declare
-            Result : constant GLuint :=
+            Result : constant GLuint := 
            Support.Indexed_Javascript_Object (Context,
         "createTexture("
 
@@ -5296,7 +5246,7 @@ Context.Execute (
             "Illegal call to glGetShaderParameter during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "getShaderParameter("
          & Support.Indexed_Object_Reference (Context, Shader) & ","
@@ -5324,7 +5274,7 @@ Context.Execute (
             "Illegal call to glGetProgramParameter during render";
       else
          declare
-            Result : constant Boolean :=
+            Result : constant Boolean := 
            Boolean'Value (Context.Execute (
         "getProgramParameter("
          & Support.Indexed_Object_Reference (Context, Progam) & ","
@@ -5335,5 +5285,150 @@ Context.Execute (
    end;
       end if;
    end Get_Program_Parameter;
+
+   --------------------
+   -- Set_Texture_Mag_Filter --
+   --------------------
+
+   procedure Set_Texture_Mag_Filter
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Mag_Filter)
+   is
+   begin
+      if Context.Rendering then
+         Context.Render_Script.Append (
+           "gl.texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_MAG_FILTER)'Image & ","
+         & Texture_Mag_Filter_Values (Param)'Image
+           & ")");
+      else
+Context.Execute (
+        "texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_MAG_FILTER)'Image & ","
+         & Texture_Mag_Filter_Values (Param)'Image
+        & ")");
+      end if;
+   end Set_Texture_Mag_Filter;
+
+   --------------------
+   -- Set_Texture_Min_Filter --
+   --------------------
+
+   procedure Set_Texture_Min_Filter
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Min_Filter)
+   is
+   begin
+      if Context.Rendering then
+         Context.Render_Script.Append (
+           "gl.texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_MIN_FILTER)'Image & ","
+         & Texture_Min_Filter_Values (Param)'Image
+           & ")");
+      else
+Context.Execute (
+        "texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_MIN_FILTER)'Image & ","
+         & Texture_Min_Filter_Values (Param)'Image
+        & ")");
+      end if;
+   end Set_Texture_Min_Filter;
+
+   --------------------
+   -- Texture_Wrap_S --
+   --------------------
+
+   procedure Texture_Wrap_S
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Wrap_Mode)
+   is
+   begin
+      if Context.Rendering then
+         Context.Render_Script.Append (
+           "gl.texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_WRAP_S)'Image & ","
+         & Texture_Wrap_Mode_Values (Param)'Image
+           & ")");
+      else
+Context.Execute (
+        "texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_WRAP_S)'Image & ","
+         & Texture_Wrap_Mode_Values (Param)'Image
+        & ")");
+      end if;
+   end Texture_Wrap_S;
+
+   --------------------
+   -- Texture_Wrap_T --
+   --------------------
+
+   procedure Texture_Wrap_T
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Param : Texture_Wrap_Mode)
+   is
+   begin
+      if Context.Rendering then
+         Context.Render_Script.Append (
+           "gl.texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_WRAP_T)'Image & ","
+         & Texture_Wrap_Mode_Values (Param)'Image
+           & ")");
+      else
+Context.Execute (
+        "texParameter("
+         & Texture_Target_Values (Target)'Image & ","
+         & Texture_Parameter_Name_Values (GL_TEXTURE_WRAP_T)'Image & ","
+         & Texture_Wrap_Mode_Values (Param)'Image
+        & ")");
+      end if;
+   end Texture_Wrap_T;
+
+   ------------------
+   -- Tex_Image_2D --
+   ------------------
+
+   procedure Tex_Image_2D
+     (Context : in out Context_WebGL_Type'Class;
+      Target : Texture_Target;
+      Level : GLint;
+      Internalformat : Internal_Format;
+      Format : Pixel_Format;
+      Item_Type : Pixel_Type;
+      Image_Id : String)
+   is
+   begin
+      if Context.Rendering then
+         Context.Render_Script.Append (
+           "gl.texImage2D("
+         & Texture_Target_Values (Target)'Image & ","
+         & Level'Image & ","
+         & Internal_Format_Values (Internalformat)'Image & ","
+         & Pixel_Format_Values (Format)'Image & ","
+         & Pixel_Type_Values (Item_Type)'Image & ","
+         & "$('#" & Image_Id & "')" & ".get(0)"
+           & ")");
+      else
+Context.Execute (
+        "texImage2D("
+         & Texture_Target_Values (Target)'Image & ","
+         & Level'Image & ","
+         & Internal_Format_Values (Internalformat)'Image & ","
+         & Pixel_Format_Values (Format)'Image & ","
+         & Pixel_Type_Values (Item_Type)'Image & ","
+         & "$('#" & Image_Id & "')" & ".get(0)"
+        & ")");
+      end if;
+   end Tex_Image_2D;
 
 end Gnoga.Gui.Element.Canvas.Context_WebGL;
