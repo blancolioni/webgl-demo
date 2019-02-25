@@ -1,3 +1,5 @@
+with Ada.Text_IO;
+
 with Gnoga.Gui.Element.Canvas.Context_WebGL.Support;
 
 package body Gnoga.Gui.Element.Canvas.Context_WebGL is
@@ -1345,7 +1347,13 @@ Context.Execute (
 Context.Execute (
         "compileShader("
          & Support.Indexed_Object_Reference (Context, Shader)
-        & ")");
+                 & ")");
+         Ada.Text_IO.Put_Line
+           (Context.Execute
+              ("getShaderInfoLog("
+               & Support.Indexed_Object_Reference (Context, Shader)
+               & ")"));
+
       end if;
    end Compile_Shader;
 
@@ -1764,7 +1772,7 @@ Context.Execute (
             "Illegal call to glCreateProgram during render";
       else
          declare
-            Result : constant GLuint := 
+            Result : constant GLuint :=
            Support.Indexed_Javascript_Object (Context,
         "createProgram("
 
@@ -1790,7 +1798,7 @@ Context.Execute (
             "Illegal call to glCreateShader during render";
       else
          declare
-            Result : constant GLuint := 
+            Result : constant GLuint :=
            Support.Indexed_Javascript_Object (Context,
         "createShader("
          & Shader_Type_Values (Item_Type)'Image
@@ -2586,7 +2594,7 @@ Context.Execute (
             "Illegal call to glGetAttribLocation during render";
       else
          declare
-            Result : constant GLuint := 
+            Result : constant GLuint :=
            GLuint'Value (Context.Execute (
         "getAttribLocation("
          & Support.Indexed_Object_Reference (Context, Program) & ","
@@ -3012,7 +3020,7 @@ Context.Execute (
             "Illegal call to glGetUniformLocation during render";
       else
          declare
-            Result : constant GLuint := 
+            Result : constant GLuint :=
            Support.Indexed_Javascript_Object (Context,
         "getUniformLocation("
          & Support.Indexed_Object_Reference (Context, Program) & ","
@@ -3176,7 +3184,7 @@ Context.Execute (
             "Illegal call to glIsBuffer during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "isBuffer("
          & Buffer'Image
@@ -3202,7 +3210,7 @@ Context.Execute (
             "Illegal call to glIsEnabled during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "isEnabled("
          & Enable_Cap_Values (Cap)'Image
@@ -3228,7 +3236,7 @@ Context.Execute (
             "Illegal call to glIsFramebuffer during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "isFramebuffer("
          & Framebuffer'Image
@@ -3254,7 +3262,7 @@ Context.Execute (
             "Illegal call to glIsProgram during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "isProgram("
          & Support.Indexed_Object_Reference (Context, Program)
@@ -3280,7 +3288,7 @@ Context.Execute (
             "Illegal call to glIsRenderbuffer during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "isRenderbuffer("
          & Renderbuffer'Image
@@ -3306,7 +3314,7 @@ Context.Execute (
             "Illegal call to glIsShader during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "isShader("
          & Support.Indexed_Object_Reference (Context, Shader)
@@ -3332,7 +3340,7 @@ Context.Execute (
             "Illegal call to glIsTexture during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "isTexture("
          & Texture'Image
@@ -5194,7 +5202,7 @@ Context.Execute (
             "Illegal call to glCreateBuffer during render";
       else
          declare
-            Result : constant GLuint := 
+            Result : constant GLuint :=
            Support.Indexed_Javascript_Object (Context,
         "createBuffer("
 
@@ -5219,7 +5227,7 @@ Context.Execute (
             "Illegal call to glCreateTexture during render";
       else
          declare
-            Result : constant GLuint := 
+            Result : constant GLuint :=
            Support.Indexed_Javascript_Object (Context,
         "createTexture("
 
@@ -5246,7 +5254,7 @@ Context.Execute (
             "Illegal call to glGetShaderParameter during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "getShaderParameter("
          & Support.Indexed_Object_Reference (Context, Shader) & ","
@@ -5274,7 +5282,7 @@ Context.Execute (
             "Illegal call to glGetProgramParameter during render";
       else
          declare
-            Result : constant Boolean := 
+            Result : constant Boolean :=
            Boolean'Value (Context.Execute (
         "getProgramParameter("
          & Support.Indexed_Object_Reference (Context, Progam) & ","

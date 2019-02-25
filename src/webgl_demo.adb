@@ -11,6 +11,7 @@ with Tutorials.Draw_Color_Square;
 with Tutorials.Rotating_Square;
 with Tutorials.Rotating_Cube;
 with Tutorials.Textured_Cube;
+with Tutorials.Lit_Cube;
 
 package body WebGL_Demo is
 
@@ -56,6 +57,7 @@ package body WebGL_Demo is
       Tutorial_Vector.Append (Tutorials.Rotating_Square.Tutorial);
       Tutorial_Vector.Append (Tutorials.Rotating_Cube.Tutorial);
       Tutorial_Vector.Append (Tutorials.Textured_Cube.Tutorial);
+      Tutorial_Vector.Append (Tutorials.Lit_Cube.Tutorial);
    end Create_Tutorials;
 
    ----------------
